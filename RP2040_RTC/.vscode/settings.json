@@ -1,0 +1,37 @@
+{
+  "cmake.configureOnOpen": false,
+  "cmake.statusbar.advanced": {
+    "debug" : {
+      "visibility": "hidden"
+              },
+    "launch" : {
+      "visibility": "hidden"
+               },
+    "build" : {
+      "visibility": "hidden"
+               },
+    "buildTarget" : {
+      "visibility": "hidden"
+               },
+    },
+    "files.associations": {
+      "clocks.h": "c",
+      "datetime.h": "c",
+      "rtc.h": "c"
+    },
+"make-runner.env": {
+  "development": {
+    "AWS_PROFILE": "development",
+    "RAILS_ENV": "development",
+    "ROLE": "admin",
+    "ENABLE_MFA": false
+  },
+  "staging": {
+    "AWS_PROFILE": "staging",
+    "RAILS_ENV": "staging",
+    "ROLE": "user",
+    "ENABLE_MFA": true
+  },
+  "none": {}
+}
+}

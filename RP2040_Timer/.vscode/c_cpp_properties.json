@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "d:/RP2040/pico-project-generator/RP2040_Timer/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-gcc-x86",
+            "compilerPathInCppPropertiesJson": "D:\\mingw64\\bin",
+            "mergeConfigurations": false,
+            "compilerPath": "D:\\mingw64\\bin",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "browse": {
+                "path": [
+                    "d:/RP2040/pico-project-generator/RP2040_Timer/**",
+                    "d:/RP2040/pico-project-generator/RP2040_Timer"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}
