@@ -1,4 +1,4 @@
-卷 软件 的文件夹 PATH 列表
+文件夹 PATH 列表
 卷序列号为 0007-1CC4
 D:.
 │  list.txt
@@ -179,6 +179,83 @@ D:.
 │      └─include
 │              dht.h
 │              
+├─RP2040_I2C_AT24C02
+│  │  CMakeLists.txt
+│  │  pico_sdk_import.cmake
+│  │  RP2040_I2C_AT24C02.c
+│  │  RP2040_SDK_CLEAR.bat
+│  │  
+│  ├─.vscode
+│  │      c_cpp_properties.json
+│  │      extensions.json
+│  │      launch.json
+│  │      settings.json
+│  │      
+│  └─build
+│          RP2040_I2C_AT24C02.bin
+│          RP2040_I2C_AT24C02.elf
+│          RP2040_I2C_AT24C02.elf.map
+│          RP2040_I2C_AT24C02.hex
+│          RP2040_I2C_AT24C02.uf2
+│          
+├─RP2040_I2C_SCAN
+│  │  CMakeLists.txt
+│  │  pico_sdk_import.cmake
+│  │  RP2040_I2C_SCAN.c
+│  │  RP2040_SDK_CLEAR.bat
+│  │  
+│  ├─.vscode
+│  │      c_cpp_properties.json
+│  │      extensions.json
+│  │      launch.json
+│  │      settings.json
+│  │      
+│  └─build
+│          RP2040_I2C_SCAN.bin
+│          RP2040_I2C_SCAN.elf
+│          RP2040_I2C_SCAN.elf.map
+│          RP2040_I2C_SCAN.hex
+│          RP2040_I2C_SCAN.uf2
+│          
+├─RP2040_I2C_SSD1306
+│  │  acme_5_outlines_font.h
+│  │  CMakeLists.txt
+│  │  font.h
+│  │  pico_sdk_import.cmake
+│  │  RP2040_I2C_SSD1306.c
+│  │  RP2040_SDK_CLEAR.bat
+│  │  ssd1306.c
+│  │  ssd1306.h
+│  │  
+│  ├─.vscode
+│  │      c_cpp_properties.json
+│  │      extensions.json
+│  │      launch.json
+│  │      settings.json
+│  │      
+│  └─build
+│          RP2040_I2C_SSD1306.bin
+│          RP2040_I2C_SSD1306.elf
+│          RP2040_I2C_SSD1306.elf.map
+│          RP2040_I2C_SSD1306.hex
+│          RP2040_I2C_SSD1306.uf2
+│          
+├─RP2040_INFO
+│  │  CMakeLists.txt
+│  │  pico_sdk_import.cmake
+│  │  RP2040_INFO.c
+│  │  RP2040_SDK_CLEAR.bat
+│  │  
+│  ├─.vscode
+│  │      settings.json
+│  │      
+│  └─build
+│          RP2040_INFO.bin
+│          RP2040_INFO.elf
+│          RP2040_INFO.elf.map
+│          RP2040_INFO.hex
+│          RP2040_INFO.uf2
+│          
 ├─RP2040_PIO_DS18B20
 │  │  CMakeLists.txt
 │  │  DS1820.pio
@@ -359,12 +436,7 @@ D:.
 │  │      settings.json
 │  │      
 │  └─build
-│      │  CMakeCache.txt
-│      │  cmake_install.cmake
-│      │  compile_commands.json
-│      │  Makefile
 │      │  RP2040_Test.bin
-│      │  RP2040_Test.dis
 │      │  RP2040_Test.elf
 │      │  RP2040_Test.elf.map
 │      │  RP2040_Test.hex
@@ -672,45 +744,27 @@ D:.
 │      │              version.h
 │      │              
 │      └─pico-sdk
-│          │  cmake_install.cmake
-│          │  Makefile
-│          │  
 │          ├─CMakeFiles
 │          │      CMakeDirectoryInformation.cmake
 │          │      progress.marks
 │          │      
 │          ├─docs
-│          │  │  cmake_install.cmake
-│          │  │  Makefile
-│          │  │  
 │          │  └─CMakeFiles
 │          │          CMakeDirectoryInformation.cmake
 │          │          progress.marks
 │          │          
 │          ├─src
-│          │  │  cmake_install.cmake
-│          │  │  Makefile
-│          │  │  
 │          │  ├─CMakeFiles
 │          │  │      CMakeDirectoryInformation.cmake
 │          │  │      progress.marks
 │          │  │      
 │          │  ├─common
-│          │  │  │  cmake_install.cmake
-│          │  │  │  Makefile
-│          │  │  │  
 │          │  │  ├─boot_picoboot
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  ├─boot_uf2
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
@@ -720,113 +774,71 @@ D:.
 │          │  │  │      progress.marks
 │          │  │  │      
 │          │  │  ├─pico_base
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  ├─pico_binary_info
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  ├─pico_bit_ops
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  ├─pico_divider
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  ├─pico_stdlib
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  ├─pico_sync
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  ├─pico_time
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  ├─pico_usb_reset_interface
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  └─pico_util
-│          │  │      │  cmake_install.cmake
-│          │  │      │  Makefile
-│          │  │      │  
 │          │  │      └─CMakeFiles
 │          │  │              CMakeDirectoryInformation.cmake
 │          │  │              progress.marks
 │          │  │              
 │          │  ├─rp2040
-│          │  │  │  cmake_install.cmake
-│          │  │  │  Makefile
-│          │  │  │  
 │          │  │  ├─CMakeFiles
 │          │  │  │      CMakeDirectoryInformation.cmake
 │          │  │  │      progress.marks
 │          │  │  │      
 │          │  │  ├─hardware_regs
-│          │  │  │  │  cmake_install.cmake
-│          │  │  │  │  Makefile
-│          │  │  │  │  
 │          │  │  │  └─CMakeFiles
 │          │  │  │          CMakeDirectoryInformation.cmake
 │          │  │  │          progress.marks
 │          │  │  │          
 │          │  │  └─hardware_structs
-│          │  │      │  cmake_install.cmake
-│          │  │      │  Makefile
-│          │  │      │  
 │          │  │      └─CMakeFiles
 │          │  │              CMakeDirectoryInformation.cmake
 │          │  │              progress.marks
 │          │  │              
 │          │  └─rp2_common
-│          │      │  cmake_install.cmake
-│          │      │  Makefile
-│          │      │  
 │          │      ├─boot_stage2
 │          │      │  │  bs2_default.bin
-│          │      │  │  bs2_default.dis
 │          │      │  │  bs2_default.elf
 │          │      │  │  bs2_default.elf.map
 │          │      │  │  bs2_default_padded_checksummed.S
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
 │          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │      │  CMakeDirectoryInformation.cmake
@@ -866,265 +878,166 @@ D:.
 │          │      │      progress.marks
 │          │      │      
 │          │      ├─cmsis
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_adc
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_base
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_claim
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_clocks
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_divider
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_dma
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_exception
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_flash
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_gpio
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_i2c
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_interp
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_irq
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_pio
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_pll
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_pwm
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_resets
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_rtc
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_spi
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_sync
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_timer
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_uart
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_vreg
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_watchdog
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─hardware_xosc
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_async_context
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_bit_ops
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_bootrom
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_bootsel_via_double_reset
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_btstack
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_cxx_options
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_cyw43_arch
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_cyw43_driver
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  ├─CMakeFiles
 │          │      │  │  │  CMakeDirectoryInformation.cmake
 │          │      │  │  │  progress.marks
@@ -1138,209 +1051,131 @@ D:.
 │          │      │  │          progress.make
 │          │      │  │          
 │          │      │  └─cybt_shared_bus
-│          │      │      │  cmake_install.cmake
-│          │      │      │  Makefile
-│          │      │      │  
 │          │      │      └─CMakeFiles
 │          │      │              CMakeDirectoryInformation.cmake
 │          │      │              progress.marks
 │          │      │              
 │          │      ├─pico_divider
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_double
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_fix
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  ├─CMakeFiles
 │          │      │  │      CMakeDirectoryInformation.cmake
 │          │      │  │      progress.marks
 │          │      │  │      
 │          │      │  └─rp2040_usb_device_enumeration
-│          │      │      │  cmake_install.cmake
-│          │      │      │  Makefile
-│          │      │      │  
 │          │      │      └─CMakeFiles
 │          │      │              CMakeDirectoryInformation.cmake
 │          │      │              progress.marks
 │          │      │              
 │          │      ├─pico_flash
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_float
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_i2c_slave
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_int64_ops
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_lwip
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_malloc
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_mbedtls
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_mem_ops
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_multicore
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_platform
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_printf
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_rand
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_runtime
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_standard_link
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_stdio
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_stdio_semihosting
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_stdio_uart
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_stdio_usb
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_stdlib
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      ├─pico_unique_id
-│          │      │  │  cmake_install.cmake
-│          │      │  │  Makefile
-│          │      │  │  
 │          │      │  └─CMakeFiles
 │          │      │          CMakeDirectoryInformation.cmake
 │          │      │          progress.marks
 │          │      │          
 │          │      └─tinyusb
-│          │          │  cmake_install.cmake
-│          │          │  Makefile
-│          │          │  
 │          │          └─CMakeFiles
 │          │              │  CMakeDirectoryInformation.cmake
 │          │              │  progress.marks
@@ -1362,9 +1197,6 @@ D:.
 │          │                      progress.make
 │          │                      
 │          └─tools
-│              │  cmake_install.cmake
-│              │  Makefile
-│              │  
 │              └─CMakeFiles
 │                      CMakeDirectoryInformation.cmake
 │                      progress.marks
