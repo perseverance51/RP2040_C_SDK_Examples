@@ -1,0 +1,55 @@
+/*
+  CMSIS-DAP…’¬º√¸¡Ó£∫openocd -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c  "adapter speed 5000"-c "program FreeRTOS_Pico.elf verify reset exit"
+
+ jlink√¸¡Ó: openocd -f interface/jlink.cfg -f target/rp2040.cfg  -c  "adapter speed 2000" -c  "program FreeRTOS_Pico.elf verify reset exit"
+ */
+#include "pico/stdlib.h"
+#include <stdio.h>
+#include <hardware/gpio.h>
+#include <FreeRTOS.h>
+#include <timers.h>
+#include <task.h>
+
+
+#define ledApp1 25
+#define ledApp2 6
+static void app1(void*);
+static void app2(void*);
+int main()
+{
+    stdio_init_all();
+    xTaskCreate(app1,"app1",1024,NULL,1,NULL);
+    xTaskCreate(app2,"app1",1024,NULL,1,NULL);
+    vTaskStartScheduler();
+    while(1);
+    return 0;
+
+  //  puts("Hello, world!");
+
+}
+
+void app1(void* vp)
+{
+    gpio_init(ledApp1);
+    gpio_set_dir(ledApp1,GPIO_OUT);
+    while(1)
+    {
+        gpio_put(ledApp1,0);
+        vTaskDelay(250);
+        gpio_put(ledApp1,1);
+        vTaskDelay(250);
+    }
+}
+
+void app2(void* vp)
+{
+    gpio_init(ledApp2);
+    gpio_set_dir(ledApp2,GPIO_OUT);
+    while(1)
+    {
+        gpio_put(ledApp2,0);
+        vTaskDelay(500);
+        gpio_put(ledApp2,1);
+        vTaskDelay(500);
+    }
+}

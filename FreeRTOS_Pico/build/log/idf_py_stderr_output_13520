@@ -1,0 +1,35 @@
+PICO_SDK_PATH is G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk
+Defaulting PICO_PLATFORM to rp2040 since not specified.
+Defaulting PICO platform compiler to pico_arm_gcc since not specified.
+PICO compiler is pico_arm_gcc
+Build type is Release
+PICO target board is pimoroni_picolipo_16mb.
+Using board configuration from G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/boards/include/boards/pimoroni_picolipo_16mb.h
+TinyUSB available at G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+BTstack available at G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/lib/btstack
+cyw43-driver available at G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/lib/cyw43-driver
+Pico W Bluetooth build support available.
+lwIP available at G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/lib/lwip
+mbedtls available at G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/lib/mbedtls
+CMake Warning at FreeRTOS-Kernel/CMakeLists.txt:37 (message):
+   Using deprecated 'FREERTOS_CONFIG_FILE_DIRECTORY' - please update your project CMakeLists.txt file:
+    add_library(freertos_config INTERFACE)
+    target_include_directories(freertos_config SYSTEM
+      INTERFACE
+        include) # The config file directory
+    target_compile_definitions(freertos_config
+      PUBLIC
+      projCOVERAGE_TEST=0)
+
+
+
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CCACHE_ENABLE
+    ESP_PLATFORM
+    PYTHON
+    PYTHON_DEPS_CHECKED
+    SDKCONFIG
+
+
