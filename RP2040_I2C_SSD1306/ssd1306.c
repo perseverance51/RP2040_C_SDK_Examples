@@ -74,7 +74,7 @@ bool ssd1306_init(ssd1306_t *p, uint16_t width, uint16_t height, uint8_t address
     }
 
     ++(p->buffer);
-
+ #ifdef OLED_SSD1306
     // from https://github.com/makerportal/rpi-pico-ssd1306
     uint8_t cmds[]= {
         SET_DISP,
@@ -111,7 +111,30 @@ bool ssd1306_init(ssd1306_t *p, uint16_t width, uint16_t height, uint8_t address
 
     for(size_t i=0; i<sizeof(cmds); ++i)
         ssd1306_write(p, cmds[i]);
+#elif defined OLED_SH1106
+    // SH1106 初始化命令
+    uint8_t cmds[] = {
+        0xAE, // 关闭显示
+        0xD5, 0x80, // 设置显示时钟分频/振荡器频率
+        0xA8, 0x3F, // 设置多路复用率 (1/64 duty)
+        0xD3, 0x00, // 设置显示偏移 (无偏移)
+        0x40, // 设置显示起始行
+        0x8D, 0x14, // 启用电荷泵
+        0x20, 0x00, // 设置内存地址模式 (水平模式)
+        0xA1, // 设置段重映射 (SEG0 到 SEG127)
+        0xC8, // 设置 COM 输出扫描方向 (从 COM[N] 到 COM0)
+        0xDA, 0x12, // 设置 COM 引脚硬件配置
+        0x81, 0xFF, // 设置对比度
+        0xD9, 0xF1, // 设置预充电周期
+        0xDB, 0x40, // 设置 VCOMH 电压倍率
+        0xA4, // 禁用全局显示 (输出跟随 RAM 内容)
+        0xA6, // 设置正常显示 (非反色)
+        0xAF, // 打开显示
+    };
 
+    for (size_t i = 0; i < sizeof(cmds); ++i)
+        ssd1306_write(p, cmds[i]);
+#endif
     return true;
 }
 
@@ -141,12 +164,14 @@ inline void ssd1306_clear(ssd1306_t *p) {
 }
 
 void ssd1306_clear_pixel(ssd1306_t *p, uint32_t x, uint32_t y) {
+
     if(x>=p->width || y>=p->height) return;
 
     p->buffer[x+p->width*(y>>3)]&=~(0x1<<(y&0x07));
 }
 
 void ssd1306_draw_pixel(ssd1306_t *p, uint32_t x, uint32_t y) {
+
     if(x>=p->width || y>=p->height) return;
 
     p->buffer[x+p->width*(y>>3)]|=0x1<<(y&0x07); // y>>3==y/8 && y&0x7==y%8
@@ -291,7 +316,10 @@ inline void ssd1306_bmp_show_image(ssd1306_t *p, const uint8_t *data, const long
 }
 
 void ssd1306_show(ssd1306_t *p) {
+
+#ifdef  OLED_SSD1306
     uint8_t payload[]= {SET_COL_ADDR, 0, p->width-1, SET_PAGE_ADDR, 0, p->pages-1};
+
     if(p->width==64) {
         payload[1]+=32;
         payload[2]+=32;
@@ -300,7 +328,20 @@ void ssd1306_show(ssd1306_t *p) {
     for(size_t i=0; i<sizeof(payload); ++i)
         ssd1306_write(p, payload[i]);
 
-    *(p->buffer-1)=0x40;
+
+    *(p->buffer-1)=0x40;//显示开始行地址为0x40
 
     fancy_write(p->i2c_i, p->address, p->buffer-1, p->bufsize+1, "ssd1306_show");
+ #elif defined OLED_SH1106
+ for (uint8_t page = 0; page < p->pages; page++) {
+        // 设置页地址
+        ssd1306_write(p, 0xB0 | page); // 设置页地址
+        ssd1306_write(p, 0x02);        // 设置列地址低 4 位
+        ssd1306_write(p, 0x10);        // 设置列地址高 4 位
+
+        // 发送当前页的数据
+        uint8_t *buffer_ptr = p->buffer + (page * p->width);
+        fancy_write(p->i2c_i, p->address, buffer_ptr, p->width, "ssd1306_show");
+    }
+#endif
 }

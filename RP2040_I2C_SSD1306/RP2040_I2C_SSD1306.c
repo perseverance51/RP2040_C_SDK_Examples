@@ -15,8 +15,8 @@
 // This example will use I2C0 on GPIO8 (SDA) and GPIO9 (SCL) running at 400KHz.
 // Pins can be changed, see the GPIO function select table in the datasheet for information on GPIO assignments
 #define I2C_PORT i2c0
-#define I2C_SDA_PIN 4
-#define I2C_SCL_PIN 5
+#define I2C_SDA_PIN 8
+#define I2C_SCL_PIN 9
 
 const uint8_t num_chars_per_disp[]={7,7,7,5};
 //const uint8_t *fonts[4]= {acme_font, bubblesstandard_font, crackers_font, BMSPA_font};
@@ -67,35 +67,35 @@ void animation(void) {
     char buf[8];
 
     for(;;) {
-        for(int y=0; y<31; ++y) {
-            ssd1306_draw_line(&disp, 0, y, 127, y);
-            ssd1306_show(&disp);
-            sleep_ms(SLEEPTIME);
-            ssd1306_clear(&disp);
-        }
+        // for(int y=0; y<31; ++y) {
+        //     ssd1306_draw_line(&disp, 0, y, 127, y);
+        //     ssd1306_show(&disp);
+        //     sleep_ms(SLEEPTIME);
+        //     ssd1306_clear(&disp);
+        // }
 
-        for(int y=0, i=1; y>=0; y+=i) {
-            ssd1306_draw_line(&disp, 0, 31-y, 127, 31+y);
-            ssd1306_draw_line(&disp, 0, 31+y, 127, 31-y);
-            ssd1306_show(&disp);
-            sleep_ms(SLEEPTIME);
-            ssd1306_clear(&disp);
-            if(y==32) i=-1;
-        }
+        // for(int y=0, i=1; y>=0; y+=i) {
+        //     ssd1306_draw_line(&disp, 0, 31-y, 127, 31+y);
+        //     ssd1306_draw_line(&disp, 0, 31+y, 127, 31-y);
+        //     ssd1306_show(&disp);
+        //     sleep_ms(SLEEPTIME);
+        //     ssd1306_clear(&disp);
+        //     if(y==32) i=-1;
+        // }
 
-        for(int i=0; i<sizeof(words)/sizeof(char *); ++i) {
-            ssd1306_draw_string(&disp, 8, 24, 2, words[i]);
-            ssd1306_show(&disp);
-            sleep_ms(800);
-            ssd1306_clear(&disp);
-        }
+        // for(int i=0; i<sizeof(words)/sizeof(char *); ++i) {
+        //     ssd1306_draw_string(&disp, 8, 24, 2, words[i]);
+        //     ssd1306_show(&disp);
+        //     sleep_ms(800);
+        //     ssd1306_clear(&disp);
+        // }
 
-        for(int y=31; y<63; ++y) {
-            ssd1306_draw_line(&disp, 0, y, 127, y);
-            ssd1306_show(&disp);
-            sleep_ms(SLEEPTIME);
-            ssd1306_clear(&disp);
-        }
+        // for(int y=31; y<63; ++y) {
+        //     ssd1306_draw_line(&disp, 0, y, 127, y);
+        //     ssd1306_show(&disp);
+        //     sleep_ms(SLEEPTIME);
+        //     ssd1306_clear(&disp);
+        // }
 
               //  ssd1306_draw_string_with_font(&disp, 8, 24, 2, font_8x5, buf);
         ssd1306_draw_string_with_font(&disp, 8, 24, 2, acme_font, (char*)"Hello!");

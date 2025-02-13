@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-/** 
+/**
 * @file ssd1306.h
-* 
+*
 * simple driver for ssd1306 displays
 */
 
@@ -32,6 +32,10 @@ SOFTWARE.
 #define _inc_ssd1306
 #include <pico/stdlib.h>
 #include <hardware/i2c.h>
+
+#define OLED_SSD1306
+//#define OLED_SH1106	//SH1106不可用，驱动有问题
+
 
 /**
 *	@brief defines commands used in ssd1306
@@ -65,7 +69,7 @@ typedef struct {
     uint8_t pages;		/**< stores pages of display (calculated on initialization*/
     uint8_t address; 	/**< i2c address of display*/
     i2c_inst_t *i2c_i; 	/**< i2c connection instance */
-    bool external_vcc; 	/**< whether display uses external vcc */ 
+    bool external_vcc; 	/**< whether display uses external vcc */
     uint8_t *buffer;	/**< display buffer */
     size_t bufsize;		/**< buffer size */
 } ssd1306_t;
@@ -78,7 +82,7 @@ typedef struct {
 *	@param[in] height : heigth of display
 *	@param[in] address : i2c address of display
 *	@param[in] i2c_instance : instance of i2c connection
-*	
+*
 * 	@return bool.
 *	@retval true for Success
 *	@retval false if initialization failed
