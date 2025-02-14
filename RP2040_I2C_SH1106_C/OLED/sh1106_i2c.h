@@ -38,4 +38,6 @@ void SH1106_clear(sh1106_t *sh1106);
 void SH1106_drawRectangle(sh1106_t *sh1106, uint8_t x, uint8_t y, uint8_t width, uint8_t height, uint8_t color);
 void SH1106_drawChar(sh1106_t * sh1106, char c, uint8_t x, uint8_t y, uint8_t color, const uint8_t* font);
 void SH1106_drawString(sh1106_t *sh1106, char* str, uint8_t x, uint8_t y, uint8_t color, const uint8_t* font);
+void OLED_ShowImage(int16_t X, int16_t Y, uint8_t Width, uint8_t Height, const uint8_t *Image);
+
 #endif //PI_PICO_SH1106_SH1106_I2C_H

@@ -176,3 +176,95 @@ void SH1106_drawString(sh1106_t *sh1106, char* str, uint8_t x, uint8_t y, uint8_
         i++;
     }
 }
+
+/**
+  * 函    数：将OLED显存数组部分清零
+  * 参    数：X 指定区域左上角的横坐标，范围：-32768-32767，屏幕区域：0-127
+  * 参    数：Y 指定区域左上角的纵坐标，范围：-32768-32767，屏幕区域：0-63
+  * 参    数：Width 指定区域的宽度，范围：0-128
+  * 参    数：Height 指定区域的高度，范围：0-64
+  * 返 回 值：无
+  * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
+  */
+ void OLED_ClearArea(int16_t X, int16_t Y, uint8_t Width, uint8_t Height)
+ {
+     int16_t i, j;
+
+     for (j = Y; j < Y + Height; j ++)		//遍历指定页
+     {
+         for (i = X; i < X + Width; i ++)	//遍历指定列
+         {
+             if (i >= 0 && i <= 127 && j >=0 && j <= 63)				//超出屏幕的内容不显示
+             {
+                 pageBuffer[j / 8][i] &= ~(0x01 << (j % 8));	//将显存数组指定数据清零
+             }
+         }
+     }
+ }
+
+ /**
+  * 函    数：OLED显示图像
+  * 参    数：X 指定图像左上角的横坐标，范围：-32768-32767，屏幕区域：0-127
+  * 参    数：Y 指定图像左上角的纵坐标，范围：-32768-32767，屏幕区域：0-63
+  * 参    数：Width 指定图像的宽度，范围：0-128
+  * 参    数：Height 指定图像的高度，范围：0-64
+  * 参    数：Image 指定要显示的图像
+  * 返 回 值：无
+  * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数.（Image取模方式:垂直扫描，从左到右，从上到下）
+  */
+void OLED_ShowImage(int16_t X, int16_t Y, uint8_t Width, uint8_t Height, const uint8_t *Image)
+{
+	uint8_t i = 0, j = 0;
+	int16_t Page, Shift;
+
+	/*将图像所在区域清空*/
+	OLED_ClearArea(X, Y, Width, Height);
+
+	/*遍历指定图像涉及的相关页*/
+	/*(Height - 1) / 8 + 1的目的是Height / 8并向上取整*/
+	for (j = 0; j < (Height - 1) / 8 + 1; j ++)
+	{
+		/*遍历指定图像涉及的相关列*/
+		for (i = 0; i < Width; i ++)
+		{
+			if (X + i >= 0 && X + i <= 127)		//超出屏幕的内容不显示
+			{
+				/*负数坐标在计算页地址和移位时需要加一个偏移*/
+				Page = Y / 8;
+				Shift = Y % 8;
+				if (Y < 0)
+				{
+					Page -= 1;
+					Shift += 8;
+				}
+
+				if (Page + j >= 0 && Page + j <= 7)		//超出屏幕的内容不显示
+				{
+					/*显示图像在当前页的内容*/
+					pageBuffer[Page + j][X + i] |= Image[j * Width + i] << (Shift);
+				}
+
+				if (Page + j + 1 >= 0 && Page + j + 1 <= 7)		//超出屏幕的内容不显示
+				{
+					/*显示图像在下一页的内容*/
+					pageBuffer[Page + j + 1][X + i] |= Image[j * Width + i] >> (8 - Shift);
+				}
+			}
+		}
+	}
+}
+void SH1106_drawBitmap(sh1106_t *sh1106, uint8_t x, uint8_t y, uint8_t width, uint8_t height, const uint8_t *bitmap, uint8_t color) {
+    uint8_t i, j;
+    for (i = 0; i < height; i++) {
+        for (j = 0; j < width; j++) {
+            if (x + j > sh1106->width || y + i > sh1106->height) {
+                continue; // 超出屏幕范围则跳过
+            }
+            if (bitmap[i * width + j]) {
+                SH1106_drawPixel(sh1106, x + j, y + i, color);
+            } else {
+                SH1106_drawPixel(sh1106, x + j, y + i, !color);
+            }
+        }
+    }
+}
