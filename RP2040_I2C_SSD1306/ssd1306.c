@@ -333,15 +333,25 @@ void ssd1306_show(ssd1306_t *p) {
 
     fancy_write(p->i2c_i, p->address, p->buffer-1, p->bufsize+1, "ssd1306_show");
  #elif defined OLED_SH1106
+		// SH1106 设置列地址和页地址的命令序列
+    uint8_t payload[] = {
+        0x00, // command
+        0xB0, // 设置页地址命令基础值
+        0x10, // 设置列地址高4位
+        0x02, // 设置列地址低4位
+    };
  for (uint8_t page = 0; page < p->pages; page++) {
+	 
+	  payload[1] = 0xB0 | i; // 修改页地址
         // 设置页地址
         ssd1306_write(p, 0xB0 | page); // 设置页地址
         ssd1306_write(p, 0x02);        // 设置列地址低 4 位
         ssd1306_write(p, 0x10);        // 设置列地址高 4 位
+	 fancy_write(p->i2c_i, p->address, payload, 4, "ssd1306_write");
+          //  发送当前页的数据
+        *(p->buffer - 1) = 0x40; // 写数据
+        fancy_write(p->i2c_i, p->address, p->buffer - 1, 128, "ssd1306_show"); // 写数据
 
-        // 发送当前页的数据
-        uint8_t *buffer_ptr = p->buffer + (page * p->width);
-        fancy_write(p->i2c_i, p->address, buffer_ptr, p->width, "ssd1306_show");
     }
 #endif
 }
