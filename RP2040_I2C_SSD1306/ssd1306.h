@@ -33,10 +33,10 @@ SOFTWARE.
 #include <pico/stdlib.h>
 #include <hardware/i2c.h>
 
-#define OLED_SSD1306
-//#define OLED_SH1106	//SH1106不可用，驱动有问题
+#define OLED_SSD1306	//SSD1306驱动
+//#define OLED_SH1106	//SH1106驱动
 
-
+#define OLED_I2C_ADDRESS    0x3C
 /**
 *	@brief defines commands used in ssd1306
 */
@@ -275,4 +275,5 @@ void ssd1306_draw_string_with_font(ssd1306_t *p, uint32_t x, uint32_t y, uint32_
 */
 void ssd1306_draw_string(ssd1306_t *p, uint32_t x, uint32_t y, uint32_t scale, const char *s);
 
+void draw_string(ssd1306_t *p,uint_fast8_t x, uint_fast8_t y, const char* s, uint8_t scaling, uint8_t color);
 #endif

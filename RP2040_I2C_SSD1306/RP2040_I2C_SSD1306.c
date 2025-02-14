@@ -67,45 +67,45 @@ void animation(void) {
     char buf[8];
 
     for(;;) {
-        // for(int y=0; y<31; ++y) {
-        //     ssd1306_draw_line(&disp, 0, y, 127, y);
-        //     ssd1306_show(&disp);
-        //     sleep_ms(SLEEPTIME);
-        //     ssd1306_clear(&disp);
-        // }
+        for(int y=0; y<31; ++y) {
+            ssd1306_draw_line(&disp, 0, y, 127, y);
+            ssd1306_show(&disp);
+            sleep_ms(SLEEPTIME);
+            ssd1306_clear(&disp);
+        }
 
-        // for(int y=0, i=1; y>=0; y+=i) {
-        //     ssd1306_draw_line(&disp, 0, 31-y, 127, 31+y);
-        //     ssd1306_draw_line(&disp, 0, 31+y, 127, 31-y);
-        //     ssd1306_show(&disp);
-        //     sleep_ms(SLEEPTIME);
-        //     ssd1306_clear(&disp);
-        //     if(y==32) i=-1;
-        // }
+        for(int y=0, i=1; y>=0; y+=i) {
+            ssd1306_draw_line(&disp, 0, 31-y, 127, 31+y);
+            ssd1306_draw_line(&disp, 0, 31+y, 127, 31-y);
+            ssd1306_show(&disp);
+            sleep_ms(SLEEPTIME);
+            ssd1306_clear(&disp);
+            if(y==32) i=-1;
+        }
 
-        // for(int i=0; i<sizeof(words)/sizeof(char *); ++i) {
-        //     ssd1306_draw_string(&disp, 8, 24, 2, words[i]);
-        //     ssd1306_show(&disp);
-        //     sleep_ms(800);
-        //     ssd1306_clear(&disp);
-        // }
+        for(int i=0; i<sizeof(words)/sizeof(char *); ++i) {
+            ssd1306_draw_string(&disp, 8, 24, 2, words[i]);
+            ssd1306_show(&disp);
+            sleep_ms(800);
+            ssd1306_clear(&disp);
+        }
 
-        // for(int y=31; y<63; ++y) {
-        //     ssd1306_draw_line(&disp, 0, y, 127, y);
-        //     ssd1306_show(&disp);
-        //     sleep_ms(SLEEPTIME);
-        //     ssd1306_clear(&disp);
-        // }
+        for(int y=31; y<63; ++y) {
+            ssd1306_draw_line(&disp, 0, y, 127, y);
+            ssd1306_show(&disp);
+            sleep_ms(SLEEPTIME);
+            ssd1306_clear(&disp);
+        }
 
               //  ssd1306_draw_string_with_font(&disp, 8, 24, 2, font_8x5, buf);
-        ssd1306_draw_string_with_font(&disp, 8, 24, 2, acme_font, (char*)"Hello!");
-        ssd1306_draw_string(&disp, 8, 0, 1, "Perseverance51");
+        //ssd1306_draw_string_with_font(&disp, 8, 16, 1, acme_font, (char*)"Hello!");
+        ssd1306_draw_string(&disp, 0, 0, 1, "Perseverance51");
                 ssd1306_show(&disp);
-                sleep_ms(800);
+                sleep_ms(1200);
                 ssd1306_clear(&disp);
 
             gpio_put(LED_PIN,!gpio_get(LED_PIN));
-
+            printf("bufsize:%d,pages:%d\n",disp.bufsize,disp.pages);
        // ssd1306_bmp_show_image(&disp, image_data, image_size);
        // ssd1306_show(&disp);
         sleep_ms(2000);
@@ -118,15 +118,15 @@ int main()
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
     i2c_setup();
-while (1) {
+
+    animation();
+
+
     //    tight_loop_contents();
         // ·­×ªLED×´Ì¬
     //    gpio_put(LED_PIN,!gpio_get(LED_PIN));
         // µÈ´ý0.5Ãë
       //  sleep_ms(2500);
-       animation();
-    }
-
 //    puts("Hello, world!");
 
     return 0;
