@@ -44,9 +44,9 @@ pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pic
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\stdint.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\sys\_intsup.h \
- D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/generated/pico_base/pico/version.h \
+ D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/generated/pico_base/pico/version.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/common/pico_base/include/pico/config.h \
- D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/generated/pico_base/pico/config_autogen.h \
+ D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/generated/pico_base/pico/config_autogen.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/boards/include/boards/pico.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \

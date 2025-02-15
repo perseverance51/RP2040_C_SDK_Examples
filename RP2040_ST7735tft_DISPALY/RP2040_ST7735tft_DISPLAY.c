@@ -11,9 +11,9 @@
 // I2C defines
 // This example will use I2C0 on GPIO8 (SDA) and GPIO9 (SCL) running at 400KHz.
 // Pins can be changed, see the GPIO function select table in the datasheet for information on GPIO assignments
-  CMSIS-DAP…’¬º√¸¡Ó£∫openocd -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c  "adapter speed 5000"-c "program RP2040_ST7735tft_DISPALY.elf verify reset exit"
+  CMSIS-DAP: openocd -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c  "adapter speed 5000"-c "program RP2040_ST7735tft_DISPLAY.elf verify reset exit"
 
- jlink√¸¡Ó: openocd -f interface/jlink.cfg -f target/rp2040.cfg  -c  "adapter speed 2000" -c  "program RP2040_ST7735tft_DISPALY.elf verify reset exit"
+ jlink: openocd -f interface/jlink.cfg -f target/rp2040.cfg  -c  "adapter speed 2000" -c  "program RP2040_ST7735tft_DISPLAY.elf verify reset exit"
 
  make clean
  */

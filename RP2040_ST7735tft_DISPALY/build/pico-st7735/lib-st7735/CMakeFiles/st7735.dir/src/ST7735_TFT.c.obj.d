@@ -1,5 +1,5 @@
 pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/ST7735_TFT.c.obj: \
- D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/pico-st7735/lib-st7735/src/ST7735_TFT.c \
+ D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/pico-st7735/lib-st7735/src/ST7735_TFT.c \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\stdint.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\machine\_default_types.h \
@@ -21,16 +21,16 @@ pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/ST7735_TFT.c.obj: \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\sys\cdefs.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\machine\stdlib.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\alloca.h \
- D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/pico-st7735/lib-st7735/include/hw.h \
+ D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/pico-st7735/lib-st7735/include/hw.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/common/pico_base/include/pico.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/common/pico_base/include/pico/types.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/common/pico_base/include/pico/assert.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\assert.h \
- D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/generated/pico_base/pico/version.h \
+ D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/generated/pico_base/pico/version.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/common/pico_base/include/pico/config.h \
- D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/generated/pico_base/pico/config_autogen.h \
+ D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/generated/pico_base/pico/config_autogen.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/boards/include/boards/pico.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
@@ -63,9 +63,9 @@ pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/ST7735_TFT.c.obj: \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
  G:/Raspberry\ Pi/Pico\ SDK\ v1.5.1/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
- D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/pico-st7735/lib-st7735/include/ST7735_TFT.h \
+ D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/pico-st7735/lib-st7735/include/ST7735_TFT.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\string.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\sys\_locale.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\strings.h \
  c:\program\ files\ (x86)\gnu\ arm\ embedded\ toolchain\10\ 2021.10\arm-none-eabi\include\sys\string.h \
- D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/pico-st7735/lib-st7735/include/TextFonts.h
+ D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/pico-st7735/lib-st7735/include/TextFonts.h

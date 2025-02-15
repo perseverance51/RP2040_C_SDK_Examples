@@ -8,17 +8,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_divider/divider.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_divider/divider.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_divider/divider.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_double/double_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_float/float_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj"
-  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/crt0.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_divider/divider.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_divider/divider.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_divider/divider.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_double/double_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_float/float_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj"
+  "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/crt0.S" "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/build/pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj"
   )
 set(CMAKE_ASM_COMPILER_ID "GNU")
 
@@ -71,14 +71,14 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "PICO_NO_HARDWARE=0"
   "PICO_ON_DEVICE=1"
   "PICO_USE_BLOCKED_RAM=0"
-  "SPI_PORT=spi1"
-  "SPI_RX=12"
-  "SPI_SCK=14"
+  "SPI_PORT=spi0"
+  "SPI_RX=8"
+  "SPI_SCK=6"
   "SPI_TFT_CS=9"
   "SPI_TFT_DC=10"
-  "SPI_TFT_PORT=spi1"
+  "SPI_TFT_PORT=spi0"
   "SPI_TFT_RST=11"
-  "SPI_TX=15"
+  "SPI_TX=7"
   "TFT_ENABLE_BLACK"
   "TFT_ENABLE_RESET"
   "TFT_ENABLE_ROTATE"
@@ -89,7 +89,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
-  "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/pico-st7735/lib-st7735/include"
+  "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/pico-st7735/lib-st7735/include"
   "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/common/pico_stdlib/include"
   "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_gpio/include"
   "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/common/pico_base/include"
@@ -167,8 +167,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj" "gcc" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj.d"
   "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj" "gcc" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj.d"
   "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" "gcc" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
-  "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/pico-st7735/lib-st7735/src/ST7735_TFT.c" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/ST7735_TFT.c.obj" "gcc" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/ST7735_TFT.c.obj.d"
-  "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPALY/pico-st7735/lib-st7735/src/hw.c" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/hw.c.obj" "gcc" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/hw.c.obj.d"
+  "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/pico-st7735/lib-st7735/src/ST7735_TFT.c" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/ST7735_TFT.c.obj" "gcc" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/ST7735_TFT.c.obj.d"
+  "D:/RP2040/pico-project-generator/pico-project-generator1_5/RP2040_ST7735tft_DISPLAY/pico-st7735/lib-st7735/src/hw.c" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/hw.c.obj" "gcc" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/src/hw.c.obj.d"
   "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj" "gcc" "pico-st7735/lib-st7735/CMakeFiles/st7735.dir/G_/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj.d"
   )
 
