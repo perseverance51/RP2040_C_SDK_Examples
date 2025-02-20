@@ -7,7 +7,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Initialise pico_sdk from installed location
 # (note this can come from environment, CMake cache etc)
-set(PICO_SDK_PATH "F:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk")
+set(PICO_SDK_PATH "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk")
+#set(PICO_SDK_PATH "G:/Raspberry Pi/Pico SDK v1.5.1/pico-sdk-2.1.1/pico-sdk")
 
 set(PICO_BOARD pico CACHE STRING "Board type")
 
@@ -18,37 +19,36 @@ if (PICO_SDK_VERSION_STRING VERSION_LESS "1.4.0")
   message(FATAL_ERROR "Raspberry Pi Pico SDK version 1.4.0 (or later) required. Your version is ${PICO_SDK_VERSION_STRING}")
 endif()
 
-project(RP2040_CLOCK C CXX ASM)
+project(Watchdog C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(RP2040_CLOCK RP2040_CLOCK.c )
+add_executable(Watchdog Watchdog.c )
 
-pico_set_program_name(RP2040_CLOCK "RP2040_CLOCK")
-pico_set_program_version(RP2040_CLOCK "0.1")
+pico_set_program_name(Watchdog "Watchdog")
+pico_set_program_version(Watchdog "0.1")
 
-pico_enable_stdio_uart(RP2040_CLOCK 0)
-pico_enable_stdio_usb(RP2040_CLOCK 1)
+pico_enable_stdio_uart(Watchdog 1)
+pico_enable_stdio_usb(Watchdog 0)
 
 # Add the standard library to the build
-target_link_libraries(RP2040_CLOCK
-        pico_stdlib
-        hardware_clocks
-        hardware_vreg)
+target_link_libraries(Watchdog
+        pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(RP2040_CLOCK PRIVATE
+target_include_directories(Watchdog PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
   ${CMAKE_CURRENT_LIST_DIR}/.. # for our common lwipopts or any other standard includes, if required
 )
 
 # Add any user requested libraries
-target_link_libraries(RP2040_CLOCK
+target_link_libraries(Watchdog
+        hardware_watchdog
         hardware_clocks
         )
 
-pico_add_extra_outputs(RP2040_CLOCK)
+pico_add_extra_outputs(Watchdog)
 

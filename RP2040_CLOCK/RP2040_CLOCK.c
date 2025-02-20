@@ -14,12 +14,15 @@
 #include "hardware/gpio.h"
 #include "hardware/divider.h"
 #include "hardware/clocks.h"
+#include "hardware/vreg.h"
 #include "hardware/pll.h"
 #include "hardware/clocks.h"
 #include "hardware/structs/pll.h"
 #include "hardware/structs/clocks.h"
 
 #define BUILTIN_LED PICO_DEFAULT_LED_PIN    // LED is on the same pin as the default LED 25
+//频率参数
+#define PLL_SYS_KHZ (300 * 1000)
 
 void measure_freqs(void) {
     uint f_pll_sys = frequency_count_khz(CLOCKS_FC0_SRC_VALUE_PLL_SYS_CLKSRC_PRIMARY);
@@ -45,6 +48,8 @@ void measure_freqs(void) {
 
 int main()
 {
+    //vreg_set_voltage(VREG_VOLTAGE_1_30); // 300MHz需要调压，如果270MHz不需要加这句
+    //set_sys_clock_khz(PLL_SYS_KHZ, true);
     stdio_init_all();
     sleep_ms(3500);
     printf("RP204 Clock Test\n");
@@ -58,7 +63,7 @@ int main()
     //                 48 * MHZ);
 
     // Turn off PLL sys for good measure
- //   pll_deinit(pll_sys);
+//   pll_deinit(pll_sys);
 // pll_init(pll_sys, 1, 1596 * MHZ, 6, 2);
 
     // clock_configure(clk_sys,//设置系统时钟，设置源为PLL_SYS，辅助源为CLK_SYS_AUX，目标频率为133MHz
@@ -72,11 +77,11 @@ int main()
     //                 CLOCKS_CLK_PERI_CTRL_AUXSRC_VALUE_CLK_SYS,
     //                 125 * MHZ,
     //                 125 * MHZ);
-     //set_sys_clock_khz(124000, true); // 346us
-  //set_sys_clock_khz(126000, true); // 340us
-  //set_sys_clock_khz(128000, true); // 335us
-  //set_sys_clock_khz(130000, true); // 330us
-  //set_sys_clock_khz(131000, true); // 328us
+    //set_sys_clock_khz(124000, true); // 346us
+    //set_sys_clock_khz(126000, true); // 340us
+    //set_sys_clock_khz(128000, true); // 335us
+    //set_sys_clock_khz(130000, true); // 330us
+    //set_sys_clock_khz(131000, true); // 328us
     set_sys_clock_khz(130000, true);// 325us
 
     // GPIO initialisation.
@@ -86,16 +91,16 @@ int main()
     gpio_pull_up(BUILTIN_LED);
     gpio_init(8);
     gpio_set_dir(8, GPIO_OUT);
-        gpio_put(8, 0);
-    while(true){
+    gpio_put(8, 0);
+    while (true) {
 
-            sleep_ms(1000);
-    gpio_xor_mask(1ul << BUILTIN_LED); // Toggle the LED
-    gpio_put(8, 1); // Turn on the LED
-    sleep_ms(1000);
-    gpio_put(8, 0); // Turn off the LED
-    measure_freqs();
-     __asm volatile ("nop\n");
+        sleep_ms(1000);
+        gpio_xor_mask(1ul << BUILTIN_LED); // Toggle the LED
+        gpio_put(8, 1); // Turn on the LED
+        sleep_ms(1000);
+        gpio_put(8, 0); // Turn off the LED
+        measure_freqs();
+        __asm volatile ("nop\n");
     }
 
 
