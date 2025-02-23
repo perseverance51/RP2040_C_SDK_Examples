@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) 2022, Daniel Gorbea
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT-style license found in the
+ * LICENSE file in the root directory of this source tree. 
+ *
+ * Pio program for UART RX protocol
+ */
+
+.define PUBLIC UART_RX_IRQ_NUM 0  // use 0 to 3
+.define PUBLIC UART_RX_CYCLES_PER_BIT 16  // we want here resolution to reduce the error when sampling. more cycles less error
+
+.program uart_rx  // 1 bit every 16 cycles
+start:
+    wait 0 pin 0
+    set x 7 [16+16/2-2]
+bit_loop:
+    in pins 1
+    jmp x-- bit_loop [16-2]
+    jmp pin good_stop
+    wait 1 pin 0 [4]
+    jmp start
+good_stop:
+    push
+    irq UART_RX_IRQ_NUM

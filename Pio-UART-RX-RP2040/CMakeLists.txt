@@ -28,37 +28,43 @@ set(PICO_BOARD pico CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(RP2040_UART_IDLE C CXX ASM)
+project(Pio-UART-RX-RP2040 C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(RP2040_UART_IDLE RP2040_UART_IDLE.c )
+add_executable(Pio-UART-RX-RP2040 Pio-UART-RX-RP2040.c uart_rx.c)
 
-pico_set_program_name(RP2040_UART_IDLE "RP2040_UART_IDLE")
-pico_set_program_version(RP2040_UART_IDLE "0.1")
+pico_generate_pio_header(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/uart_rx.pio)
+
+pico_set_program_name(Pio-UART-RX-RP2040 "Pio-UART-RX-RP2040")
+pico_set_program_version(Pio-UART-RX-RP2040 "0.1")
+
+# Generate PIO header
+pico_generate_pio_header(Pio-UART-RX-RP2040 ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(RP2040_UART_IDLE 1)
-pico_enable_stdio_usb(RP2040_UART_IDLE 0)
+pico_enable_stdio_uart(Pio-UART-RX-RP2040 1)
+pico_enable_stdio_usb(Pio-UART-RX-RP2040 0)
 
 # Add the standard library to the build
-target_link_libraries(RP2040_UART_IDLE
+target_link_libraries(Pio-UART-RX-RP2040
         pico_stdlib
-        hardware_uart
-        hardware_timer)
+        hardware_irq
+        hardware_pio
+        hardware_dma)
 
 # Add the standard include files to the build
-target_include_directories(RP2040_UART_IDLE PRIVATE
+target_include_directories(Pio-UART-RX-RP2040 PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(RP2040_UART_IDLE
-        hardware_clocks
+target_link_libraries(Pio-UART-RX-RP2040
+        hardware_pio
         )
 
-pico_add_extra_outputs(RP2040_UART_IDLE)
+pico_add_extra_outputs(Pio-UART-RX-RP2040)
 

@@ -7,6 +7,9 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/clocks.h"
+#include "hardware/uart.h"
+#include "hardware/irq.h"
+#include "hardware/timer.h"
 
 #define BUILTIN_LED PICO_DEFAULT_LED_PIN        // 25号引脚
 
@@ -21,51 +24,23 @@
 #define UART0_TX_PIN 0
 #define UART0_RX_PIN 1
 
-//软件方式定时器定时空闲检测
-//#define SOFT_UART_IDLE
-//硬件方式空闲检测
-#define HARD_UART_IDLE
-
 volatile bool uart_idle = false;
-#ifdef SOFT_UART_IDLE
-// 全局变量
-alarm_id_t uart_idle_alarm = -1;
-// 定义空闲时间阈值（单位：微秒）
-#define UART_IDLE_TIMEOUT 1000
-// 定时器回调函数
-int64_t uart_idle_alarm_callback(alarm_id_t id, void *user_data) {
-    uart_idle = true;
-    return 0;  // 不重复定时器
-}
-#endif
+
 // UART 接收中断处理
 void on_uart_rx() {
 
-#ifdef SOFT_UART_IDLE
-    // 软件方式检测空闲
-
-    //每次收到数据时重置定时器
-    if (uart_idle_alarm >= 0) {
-        cancel_alarm(uart_idle_alarm);
-    }
-    uart_idle_alarm = add_alarm_in_us(UART_IDLE_TIMEOUT, uart_idle_alarm_callback, NULL, false);
-
-#endif
-
-#ifdef HARD_UART_IDLE
 // 检查是否为空闲中断
     if (uart_get_hw(UART_ID)->mis & UART_UARTMIS_RTMIS_BITS) {
         // 清除空闲中断标志
         hw_clear_bits(&uart_get_hw(UART_ID)->icr, UART_UARTICR_RTIC_BITS);
         uart_idle = true;
+        while (uart_is_readable(UART_ID)) {
+            uint8_t ch = uart_getc(UART_ID);
+            // 处理接收到的数据...
+            uart_putc(UART_ID, ch);
+        }
     }
-#endif
-    // 读取数据
-    while (uart_is_readable(UART_ID)) {
-        uint8_t ch = uart_getc(UART_ID);
-        // 处理接收到的数据...
-        uart_putc(UART_ID, ch);
-    }
+
 }
 // 初始化函数
 void uart_setup() {
@@ -83,7 +58,7 @@ void uart_setup() {
 
     // 启用硬件空闲检测
     hw_set_bits(&uart_get_hw(UART_ID)->imsc, UART_UARTIMSC_RTIM_BITS);
-
+//hw_set_bits(&uart_get_hw(uart0)->imsc, UART_UARTIMSC_RXIM_BITS);//启用UART接收中断
     // 启用接收中断
     irq_set_exclusive_handler(UART_IRQ, on_uart_rx);
     uart_set_irq_enables(UART_ID, true, false);
@@ -103,10 +78,11 @@ int main()
 
     while (true) {
 
-        sleep_ms(1000);
+        //  sleep_ms(1000);
         if (uart_idle) {
             uart_idle = false;
             // 处理接收空闲事件...
+
             gpio_xor_mask(1ul << BUILTIN_LED); // Toggle the LED
         }
     }
