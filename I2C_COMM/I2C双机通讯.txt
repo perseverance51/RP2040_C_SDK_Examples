@@ -1,0 +1,1 @@
+参考例程：pico-examples\i2c\slave_mem_i2c
