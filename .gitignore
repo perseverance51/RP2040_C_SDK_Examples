@@ -1,0 +1,34 @@
+# Build directories
+build/
+*/build/
+*/*/build/
+
+# Compiled binaries
+*.bin
+*.elf
+*.hex
+*.uf2
+*.map
+*.o
+*.a
+
+# CMake build files
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+build.ninja
+*.ld
+
+# IDE files
+.vscode/
+.idea/
+*.project
+*.workspace
+
+# Dependency directories
+pico-sdk/
+
+# OS files
+.DS_Store
+Thumbs.db
