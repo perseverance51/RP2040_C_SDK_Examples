@@ -2,6 +2,7 @@
 build/
 */build/
 */*/build/
+**/build/
 
 # Compiled binaries
 *.bin
