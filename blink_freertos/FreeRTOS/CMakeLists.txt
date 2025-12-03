@@ -8,7 +8,7 @@ add_library(FreeRTOS STATIC FreeRTOS-Kernel/croutine.c
      FreeRTOS-Kernel/portable/GCC/ARM_CM0/port.c
      FreeRTOS-Kernel/portable/GCC/ARM_CM0/portasm.c
     FreeRTOS-Kernel/portable/MemMang/heap_4.c
-    src/FreeRTOS_Support_Files/IdleMemory.c
+    #src/FreeRTOS_Support_Files/IdleMemory.c
     # port.c
 )
 
