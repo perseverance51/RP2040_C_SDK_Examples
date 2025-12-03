@@ -77,6 +77,7 @@ target_link_libraries(blink_freertos
 #include "pico/stdlib.h"
 #include "hardware/timer.h"
 #include "hardware/clocks.h"
+#include "FreeRTOSConfig.h"
 #include "FreeRTOS.h"
 #include "task.h"
 
@@ -134,4 +135,3 @@ int main() {
 这样修改后，你的项目将从简单的裸机程序转变为基于FreeRTOS实时操作系统的多任务应用程序。FreeRTOS将提供任务调度、内存管理、定时器等功能，使你的程序更加模块化和可靠。
 
 需要我帮你执行这些步骤中的任何一步吗？
-        

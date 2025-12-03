@@ -27,6 +27,7 @@ set(PICO_BOARD pico CACHE STRING "Board type")
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
+# include(FreeRTOS_Kernel_Import.cmake)
 
 project(blink_freertos C CXX ASM)
 
@@ -44,20 +45,41 @@ pico_set_program_version(blink_freertos "0.1")
 pico_enable_stdio_uart(blink_freertos 1)
 pico_enable_stdio_usb(blink_freertos 0)
 
+# set(PICO_HEAP_SIZE 4096)
+
+# FreeRTOS configuration for RP2040
+#  set(FREERTOS_PORT GCC_ARM_CM0 CACHE STRING "FreeRTOS port for RP2040 (ARM Cortex-M0+)")
+
+# Create freertos_config target as required by FreeRTOS-Kernel
+
+# set(FREERTOS_KERNEL_PATH ${CMAKE_SOURCE_DIR}/FreeRTOS)
+
+
+add_subdirectory(FreeRTOS)
 # Add the standard library to the build
 target_link_libraries(blink_freertos
-        pico_stdlib)
+        pico_stdlib
+        # FreeRTOS-Kernel-Heap4 # FreeRTOS kernel and dynamic heap
+        # pico_multicore
+        FreeRTOS
+        )
+
+
 
 # Add the standard include files to the build
 target_include_directories(blink_freertos PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
+        # ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/include
+        # ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/FreeRTOS-Kernel/include
+        # ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM0
 )
 
 # Add any user requested libraries
-target_link_libraries(blink_freertos 
+target_link_libraries(blink_freertos
         hardware_timer
         hardware_clocks
+        hardware_gpio
+
         )
 
 pico_add_extra_outputs(blink_freertos)
-
