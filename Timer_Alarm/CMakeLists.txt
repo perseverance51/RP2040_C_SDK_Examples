@@ -28,43 +28,35 @@ set(PICO_BOARD pico CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(blink_freertos C CXX ASM)
+project(Timer_Alarm C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(blink_freertos blink_freertos.c )
+add_executable(Timer_Alarm Timer_Alarm.c )
 
-pico_set_program_name(blink_freertos "blink_freertos")
-pico_set_program_version(blink_freertos "0.1")
+pico_set_program_name(Timer_Alarm "Timer_Alarm")
+pico_set_program_version(Timer_Alarm "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(blink_freertos 1)
-pico_enable_stdio_usb(blink_freertos 0)
+pico_enable_stdio_uart(Timer_Alarm 1)
+pico_enable_stdio_usb(Timer_Alarm 0)
 
 # Add the standard library to the build
-add_subdirectory(FreeRTOS)
-
-target_link_libraries(blink_freertos
-        pico_stdlib
-        FreeRTOS
-        )
+target_link_libraries(Timer_Alarm
+        pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(blink_freertos PRIVATE
+target_include_directories(Timer_Alarm PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
-        ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/include
-        ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/FreeRTOS-Kernel/include
-        # ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM0
 )
 
 # Add any user requested libraries
-target_link_libraries(blink_freertos
+target_link_libraries(Timer_Alarm 
         hardware_timer
-        hardware_clocks
-
         )
 
-pico_add_extra_outputs(blink_freertos)
+pico_add_extra_outputs(Timer_Alarm)
+
