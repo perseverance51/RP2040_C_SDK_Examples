@@ -1,2 +1,37 @@
 build
 !.vscode/*
+
+# 屏蔽各种缓存文件夹
+.cache/
+.cache
+*.cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 屏蔽IDE缓存
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 屏蔽系统文件
+.DS_Store
+Thumbs.db
+
+# 屏蔽编译生成的文件
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.uf2
+*.map
+*.dis
+
+# 屏蔽CMake生成的文件
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
