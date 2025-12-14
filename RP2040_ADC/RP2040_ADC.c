@@ -1,5 +1,10 @@
 
 /*
+RP2040的5输入多路复用器：
+4个输入可在与GPIO[29:26]共用的封装引脚上使用
+1个输入专用于内部温度传感器
+4组接收采样FIFO
+
  CMSIS-DAP烧录命令：openocd -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c  "adapter speed 5000"-c "program RP2040_ADC.elf verify reset exit"
 
  jlink命令: openocd -f interface/jlink.cfg -f target/rp2040.cfg  -c  "adapter speed 2000" -c  "program RP2040_ADC.elf verify reset exit"
