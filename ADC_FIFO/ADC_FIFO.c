@@ -58,7 +58,7 @@ int main()
     // 初始化LED
     gpio_init(BUILTIN_LED);
     gpio_set_dir(BUILTIN_LED, GPIO_OUT);
-   // gpio_pull_up(BUILTIN_LED);
+    gpio_pull_up(BUILTIN_LED);
     // 初始化ADC模块
     adc_init();
 
@@ -99,25 +99,23 @@ int main()
         sleep_ms(500);
 
 // /*
-        // 检查是否有数据需要处理
-        if (data_ready) {
-            printf("采集到 %d 个样本：\r\n", buffer_index);
-
-            // 遍历缓存区数据并解析通道和电压
+    // 遍历缓存区数据并解析电压
             for (uint8_t i = 0; i < buffer_index; i++) {
-                // ADC采样值的高3位为通道编号，低12位为采样数据
-                uint8_t channel = (adc_sample_buffer[i] >> 12) & 0x07;
-                uint16_t adc_raw = adc_sample_buffer[i] & 0xFFF;
+                // 根据RP2040数据手册：ADC FIFO数据格式
+                // 低12位（bit[11:0]）：ADC采样值（12位精度）
+                // 高20位（bit[31:12]）：填充位（固定为0）
+                uint32_t fifo_data = adc_sample_buffer[i];
+                uint16_t adc_raw = fifo_data & 0xFFF;  // 提取低12位有效数据
+
+                // 在轮询模式下，FIFO数据不包含通道信息
+                // 根据采样顺序推断通道号（0-3循环）
+                uint8_t channel = i % 4;
+
                 float voltage = adc_raw * 3.3f / 4095.0f;  // 3.3V参考电压
 
                 printf("通道%d | ADC值：%4d | 电压：%.3fV\r\n", channel, adc_raw, voltage);
             }
             printf("-----------------------------\r\n");
-
-            // 重置缓冲区和标志
-            buffer_index = 0;
-            data_ready = false;
-        }
 // */
 
     }
